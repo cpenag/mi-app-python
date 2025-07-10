@@ -24,6 +24,10 @@ jobs:
       run: |
         pip install -r requirements.txt
 
+
+    - name: Establecer PYTHONPATH
+      run: echo "PYTHONPATH=${{ github.workspace }}" >> $GITHUB_ENV
+
     - name: Ejecutar tests
       run: |
         pytest tests/ -v
